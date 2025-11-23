@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Button,
   ContextMenu,
@@ -7,6 +7,7 @@ import {
   Modal,
   ComponentPropsProvider,
   Group,
+  Select,
 } from "@kousta-ui/components";
 import {
   Bs123,
@@ -22,11 +23,15 @@ import "./App.css";
 import "./index.css";
 import { useDisclosure, useScrollLock } from "@kousta-ui/hooks";
 
+import { isNodeAChild } from "@kousta-ui/helpers";
+
 function App() {
   const { lockScroll, unlockScroll } = useScrollLock();
   const { opened, close, open } = useDisclosure(false);
   const [loading, setLoading] = useState(false);
   const [value, setValue] = useState<string>("");
+  const [count, setCount] = useState<number>(0);
+  const parentRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
     let timeout;
@@ -41,6 +46,29 @@ function App() {
 
   return (
     <>
+      <div ref={parentRef}>
+        <button
+          onClick={(e) => {
+            alert(isNodeAChild(parentRef.current, e.target));
+          }}
+        >
+          inside
+        </button>
+        <button
+          onClick={(e) => {
+            alert(isNodeAChild(parentRef.current, e.target));
+          }}
+        >
+          inside 2
+        </button>
+      </div>
+      <button
+        onClick={(e) => {
+          alert(isNodeAChild(parentRef.current, e.target));
+        }}
+      >
+        outside
+      </button>
       <ComponentPropsProvider
         button={{
           size: "sm",
@@ -76,12 +104,96 @@ function App() {
           size: "lg",
         }}
       >
+        <div style={{ display: "flex", gap: "12px" }}>
+          <div>
+            <Select
+              data={[
+                { first_name: "Youness", last_name: "Tailba", id: 1 },
+                { first_name: "Oussama", last_name: "Tailba", id: 2 },
+                { first_name: "Abd eladim", last_name: "Tailba", id: 3 },
+                { first_name: "Khalid", last_name: "Tailba", id: 4 },
+              ]}
+              options={{
+                value: "first_name last_name",
+                label: "first_name last_name",
+              }}
+              label="Select"
+              // errors={["There is an error"]}
+              // labelPosition="x"
+              required
+              // emptyMessage="Give me some options you mother"
+              // seachable={false}
+              // disabled
+            />
+          </div>
+          <Input
+            label="Society"
+            placeholder="this is my placeholder"
+            // errors={["There is an error"]}
+            // required={true}
+            // type="numbenumberr"
+            value={value}
+            // type="number"
+            step={2.5}
+            onChange={(e) => {
+              setValue(e.target.value);
+            }}
+            // labelPosition="x"
+            // i should add this
+            leftSection={
+              <Button onClick={() => alert("Hello InputLeft Section")}>
+                left
+              </Button>
+            }
+            rightSection={
+              <Button onClick={() => alert("Hello InputLeft Section")}>
+                right
+              </Button>
+            }
+          />
+        </div>
+        <br />
+        <br />
+
         <Group direction="row">
-          <Button variant="primary">Primary Link</Button>
-          <Button variant="neutral">Neutral Link</Button>
+          <Button disabled variant="primary">
+            Primary Link
+          </Button>
+          <Button variant="primary">Neutral Link</Button>
           <Button variant="success">Success Link</Button>
           <Button variant="danger">Danger Link</Button>
         </Group>
+        <br />
+        <br />
+
+        <Group gap="10px">
+          <Button
+            variant="neutral"
+            onClick={() => setCount((prev) => prev - 1)}
+            disabled={count === 0}
+          >
+            -
+          </Button>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              textAlign: "left",
+            }}
+          >
+            {count}
+          </div>
+          <Button
+            variant="neutral"
+            onClick={() => setCount((prev) => prev + 1)}
+            disabled={count === 23}
+          >
+            +
+          </Button>
+        </Group>
+        <br />
+        <br />
+
         <Modal
           opened={opened}
           onClose={close}
@@ -132,33 +244,6 @@ function App() {
         <Button size={"md"} onClick={open}>
           Open Modal
         </Button>
-
-        <br />
-        <br />
-        <Input
-          label="Society"
-          placeholder="this is my placeholder"
-          errors={["There is an error"]}
-          required={true}
-          // type="numbenumberr"
-          value={value}
-          onChange={(e) => {
-            setValue(e.target.value);
-          }}
-          // i should add this
-          leftSection={
-            <Button onClick={() => alert("Hello InputLeft Section")}>
-              left
-            </Button>
-          }
-          rightSection={
-            <Button onClick={() => alert("Hello InputLeft Section")}>
-              right
-            </Button>
-          }
-        />
-        <br />
-        <br />
 
         <Button
           variant="danger"
