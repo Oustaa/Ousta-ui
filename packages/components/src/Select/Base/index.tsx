@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import FormElement from "../FormElement";
-import Input from "../Input";
-import Label from "../Label";
+import FormElement from "../../FormElement";
+import Input from "../../Input";
+import Label from "../../Label";
 import { SelectDataConstraints, SelectProps } from "./_props";
 import { getNestedProperty, isNodeAChild } from "@kousta-ui/helpers";
 
@@ -14,40 +14,43 @@ const Select = <T extends SelectDataConstraints>({
   errors,
   required,
   labelPosition,
-  data: propsData,
+  data,
   options = { value: "value", label: "label" },
   clearable = true,
   emptyMessage,
   seachable = true,
   disabled,
   onChange,
-  getData,
-  extractDynamicData,
   disabledOption,
   onSearch,
+  loading,
+  asyncSearch,
+  onLastItemRendered,
   ...props
 }: SelectProps<T>) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [data, setData] = useState<T[]>(propsData || []);
-  const [selectData, setSelectData] = useState<T[]>(propsData || []);
+  const [selectData, setSelectData] = useState<T[]>(data);
 
   /* Select Value Logic */
   const [value, setValue] = useState<null | unknown>(props.value);
 
-  const onSelectValue = useCallback((value: string | number | unknown) => {
-    setValue(value);
-    onChange?.(value);
-    setDropDownOpen(false);
-    setSearchTerm("");
-    setSelectData(data);
-  }, []);
+  const onSelectValue = useCallback(
+    (value: string | number | unknown) => {
+      setValue(value);
+      onChange?.(value);
+      setDropDownOpen(false);
+      setSearchTerm("");
+      setSelectData(data);
+    },
+    [data],
+  );
 
   const selectedRow = useMemo(
     () =>
       data.find(
         (row) => getNestedProperty(row, options?.value as string) === value,
       ),
-    [value],
+    [value, data],
   );
 
   const selectedLabel = useMemo(() => {
@@ -71,52 +74,31 @@ const Select = <T extends SelectDataConstraints>({
     setSelectData(data);
   }, [data]);
 
-  const closeOnClickOutside = useCallback((e?: MouseEvent | TouchEvent) => {
-    if (
-      !e ||
-      isNodeAChild(
-        e.target as HTMLElement,
-        selectRef.current as unknown as HTMLElement,
+  const closeOnClickOutside = useCallback(
+    (e?: MouseEvent | TouchEvent) => {
+      if (
+        !e ||
+        isNodeAChild(
+          e.target as HTMLElement,
+          selectRef.current as unknown as HTMLElement,
+        )
       )
-    )
-      closeDropDown();
-  }, []);
+        closeDropDown();
+    },
+    [data],
+  );
   /* End Drop Down Logic */
-
-  /* Loading dynamic data logic */
-  const [loading, setLoading] = useState<boolean>(!!props.loading);
-
-  useEffect(() => {
-    if (getData && typeof getData === "function") {
-      setLoading(true);
-
-      getData()
-        .then((response) => {
-          let data = response as T[];
-
-          if (extractDynamicData && typeof extractDynamicData === "function") {
-            data = extractDynamicData(response);
-          }
-          setSelectData(data);
-          setData(data);
-        })
-        .catch((error) => {
-          console.log({ error });
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    }
-  }, []);
-  /* End loading dynamic data logic */
 
   /* Search Logic */
   const search = useCallback(
     (term: string) => {
-      if (options.label || (onSearch && typeof onSearch === "function")) {
+      if (asyncSearch && typeof asyncSearch === "function") {
+        asyncSearch(term);
+      } else if (
+        options.label ||
+        (onSearch && typeof onSearch === "function")
+      ) {
         const regex = new RegExp(term, "i");
-
-        console.log({ term });
 
         if (term && term.trim() === "") {
           setSelectData(data);
@@ -146,11 +128,13 @@ const Select = <T extends SelectDataConstraints>({
   /* Effects */
   // if props data changed, select data should be reflected
   useEffect(() => {
-    if (propsData) {
-      setSelectData(data);
-    }
-  }, [propsData]);
+    setSelectData(data);
+  }, [data]);
   /* End of Effects */
+
+  useEffect(() => {
+    console.log("SELECT JUST RENDERED");
+  }, []);
 
   return (
     <div className={`${classes["select"]}${disabled && "disabled"}`}>
@@ -241,6 +225,8 @@ const Select = <T extends SelectDataConstraints>({
               onSelectValue={onSelectValue}
               value={value}
               disabledOption={disabledOption}
+              loading={loading || false}
+              onLastItemRendered={onLastItemRendered}
             />
           )}
         </div>

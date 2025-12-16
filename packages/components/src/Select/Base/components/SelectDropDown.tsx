@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { SelectDataConstraints, SelectProps } from "../_props";
 import classes from "../Select.module.css";
 import SelectOption from "./SelectOption";
@@ -9,7 +9,11 @@ type SelectDropDownProps<T extends SelectDataConstraints> = {
   onSelectValue: (value: unknown) => void;
   value?: unknown;
   data: T[];
-} & Pick<SelectProps<T>, "options" | "emptyMessage" | "disabledOption">;
+  loading: boolean;
+} & Pick<
+  SelectProps<T>,
+  "options" | "emptyMessage" | "disabledOption" | "onLastItemRendered"
+>;
 
 const SelectDropDown = <T extends SelectDataConstraints>({
   data,
@@ -18,8 +22,11 @@ const SelectDropDown = <T extends SelectDataConstraints>({
   disabledOption,
   options,
   onSelectValue,
+  loading,
   value,
+  onLastItemRendered,
 }: SelectDropDownProps<T>) => {
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
   const [highlitedOptionIndex, setHighlitedOptionIndex] = useState<number>(
     () => {
       if (value) {
@@ -33,27 +40,57 @@ const SelectDropDown = <T extends SelectDataConstraints>({
     },
   );
 
+  const goNext = useCallback(
+    (index: number): number => {
+      // check if the current option is not disabled
+      const row = data[index];
+
+      if (disabledOption && disabledOption(row)) {
+        return goNext(index + 1);
+      }
+
+      return index;
+    },
+    [highlitedOptionIndex],
+  );
+
+  const goPrev = useCallback(
+    (index: number): number => {
+      // check if the current option is not disabled
+      const row = data[index];
+
+      if (disabledOption && disabledOption(row)) {
+        return goPrev(index - 1);
+      }
+
+      return index;
+    },
+    [highlitedOptionIndex],
+  );
+
   useEffect(() => {
     document.addEventListener("mousedown", closeOnClickOutside);
     document.addEventListener("touchstart", closeOnClickOutside, true);
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeOnClickOutside();
-      if (e.key === "ArrowDown")
+      if (e.key === "ArrowDown") {
         setHighlitedOptionIndex((prev) => {
           if (prev >= data.length - 1) {
             return 0;
           }
 
-          return prev + 1;
+          return goNext(prev + 1);
         });
-      if (e.key === "ArrowUp")
+      }
+      if (e.key === "ArrowUp") {
         setHighlitedOptionIndex((prev) => {
           if (prev === 0) {
             return data.length - 1;
           }
-          return prev - 1;
+          return goPrev(prev - 1);
         });
+      }
     };
 
     document.addEventListener("keydown", onKeyDown);
@@ -86,31 +123,51 @@ const SelectDropDown = <T extends SelectDataConstraints>({
     };
   }, [highlitedOptionIndex]);
 
-  // should add an effect for presing down/up keys (DONE)
-  // add state for the highlithed option (DONE)
-  // it should change on the option hover, and if clicking on the up/down keys
-  // on clicking on enter the highlithed option should be selected
   const setHighlitedOption = useCallback((index: number) => {
     setHighlitedOptionIndex(index);
   }, []);
 
   return (
-    <div className={classes["select-dropdown"]}>
-      {data.length === 0 ? (
+    <div ref={dropdownRef} className={classes["select-dropdown"]}>
+      {data.length === 0 && !loading ? (
         <div className={classes["select-empty-message"]}>{emptyMessage}</div>
       ) : (
-        data.map((row, index) => (
-          <SelectOption
-            row={row}
-            isHighlighted={index === highlitedOptionIndex}
-            key={getNestedProperty(row, options?.value as string)}
-            options={options}
-            onSelectValue={onSelectValue}
-            value={value}
-            highlightOption={() => setHighlitedOption(index)}
-            disabledOption={disabledOption}
-          />
-        ))
+        <>
+          {data.map((row, index) => {
+            console.log({ index, "data.length - 1": data.length - 1 });
+            return (
+              <SelectOption
+                index={index}
+                dataLength={data.length}
+                dropdownRef={dropdownRef}
+                row={row}
+                isHighlighted={index === highlitedOptionIndex}
+                key={getNestedProperty(row, options?.value as string)}
+                options={options}
+                onSelectValue={onSelectValue}
+                value={value}
+                highlightOption={() => setHighlitedOption(index)}
+                disabledOption={disabledOption}
+                onLastItemRendered={
+                  index === data.length - 1 ? onLastItemRendered : undefined
+                }
+              />
+            );
+          })}
+          {/* this should be changed */}
+          {loading && (
+            <SelectOption
+              dropdownRef={dropdownRef}
+              row={{ label: "Loading...", value: "" } as unknown as T}
+              highlightOption={() => {}}
+              isHighlighted={false}
+              options={{ value: "value", label: "label" }}
+              onSelectValue={onSelectValue}
+              value={value}
+              disabledOption={() => true}
+            />
+          )}
+        </>
       )}
     </div>
   );
