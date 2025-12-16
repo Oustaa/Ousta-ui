@@ -1,7 +1,8 @@
 export function isNodeAChild(
-  parent: HTMLElement | ChildNode,
-  target: HTMLElement,
+  parent: Node | null | undefined,
+  target: Node | null | undefined,
 ): boolean {
+  if (!parent || !target) return false;
   if (parent === target) return true;
 
   const children = parent.childNodes;
