@@ -1,6 +1,6 @@
 {
   "name": "@kousta-ui/components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./cjs/index.cjs",
   "module": "./esm/index.mjs",
   "types": "lib/index.d.ts",
@@ -40,7 +40,7 @@
     "react-dom": ">=17"
   },
   "dependencies": {
-    "@kousta-ui/hooks": "workspace:*",
-    "@kousta-ui/helpers": "workspace:*"
+    "@kousta-ui/helpers": "workspace:*",
+    "@kousta-ui/hooks": "workspace:*"
   }
 }

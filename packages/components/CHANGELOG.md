@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/Oustaa/kousta-ui/compare/@kousta-ui/components@0.1.1...@kousta-ui/components@0.1.2) (2025-12-21)
+
+### Features
+
+- **components:** adding a WindowBoundary comp ([a1e0341](https://github.com/Oustaa/kousta-ui/commit/a1e0341d8c66f8325121420598da63ca0e41e5d1))
+- **components:** adding ErrorBoundary, Group and Label, refactoring the input ([2e77f7e](https://github.com/Oustaa/kousta-ui/commit/2e77f7eb19497df530b1bd805f551b012cc10240))
+- **components:** completing select version one, needs more work ([d39e6b1](https://github.com/Oustaa/kousta-ui/commit/d39e6b10409d43c133684cee3a2663a2c1f94c92))
+- **components:** select version one ([a2bec92](https://github.com/Oustaa/kousta-ui/commit/a2bec92ac5bc8e2bd4e4a40ec59dfb52102dcf8a))
+- **components:** updating select folder structur and completing v1 of AsyncSelect ([401024e](https://github.com/Oustaa/kousta-ui/commit/401024e7630345989cc59694824a5c3c518facf7))
+
+### Bug Fixes
+
+- **components:** fixing modal offset, and preparing VW files ([372525b](https://github.com/Oustaa/kousta-ui/commit/372525b364f0294be7b50094a5cb4f8b42c09d3e))
+- **components:** fixing modal position ([723c393](https://github.com/Oustaa/kousta-ui/commit/723c39333b7ef0887110e437848fa3e0d010fbd2))
+
 ## [0.1.1](https://github.com/Oustaa/kousta-ui/compare/@kousta-ui/components@0.1.0-alpha.5...@kousta-ui/components@0.1.1) (2025-11-14)
 
 **Note:** Version bump only for package @kousta-ui/components
