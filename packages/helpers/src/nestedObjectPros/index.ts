@@ -1,5 +1,8 @@
+// TODO:
+// i should check for \w and \d instead of specieal charachters
+// and also i need to add a skip charachters e.g.: \\(name), %...
 function isSpecialChar(s: string): boolean {
-  return ["{", "}", "(", ")", "[", "]", "-", "_", "|", " "].includes(s);
+  return ["{", "}", "(", ")", "[", "]", "-", "_", "/", "|", " "].includes(s);
 }
 
 export function getNestedProperty<T>(
