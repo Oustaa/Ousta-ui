@@ -16,7 +16,7 @@
 
 .select-container {
   position: relative;
-  border-radius: calc(var(--kui-rounded) * 1rem);
+  border-radius: calc(var(--Ouirounded) * 1rem);
   width: 100%;
 
   &:hover {
@@ -28,7 +28,7 @@
 }
 
 .highlighted-option {
-  background-color: light-dark(var(--kui-primary-300), var(--kui-primary-500));
+  background-color: light-dark(var(--Ouiprimary-300), var(--Ouiprimary-500));
 }
 
 .select-dropdown {
@@ -38,22 +38,19 @@
   z-index: 1000;
   max-height: 40vh;
   overflow-y: scroll;
-  scroll-margin-block: var(--kui-spacing-xs);
+  scroll-margin-block: var(--Ouispacing-xs);
 
-  background-color: light-dark(var(--kui-neutral-100), var(--kui-neutral-800));
-  border: solid 0.5px light-dark(var(--kui-neutral-200), var(--kui-neutral-700));
-  border-radius: calc(var(--kui-rounded) * 1rem);
+  background-color: light-dark(var(--Ouineutral-100), var(--Ouineutral-800));
+  border: solid 0.5px light-dark(var(--Ouineutral-200), var(--Ouineutral-700));
+  border-radius: calc(var(--Ouirounded) * 1rem);
 }
 
 .select-option {
-  padding: var(--kui-spacing-xs);
+  padding: var(--Ouispacing-xs);
   text-align: left;
 
   &[data-selected="true"] {
-    background-color: light-dark(
-      var(--kui-primary-400),
-      var(--kui-primary-600)
-    );
+    background-color: light-dark(var(--Ouiprimary-400), var(--Ouiprimary-600));
   }
 
   &[data-disabled="true"] {
@@ -64,13 +61,13 @@
 
 .select-empty-message {
   text-align: center;
-  padding: var(--kui-spacing-xs);
+  padding: var(--Ouispacing-xs);
 }
 
 .select-right-section {
-  border-radius: calc(var(--kui-rounded) * 1rem);
-  padding: var(--kui-spacing-xs) var(--kui-spacing-sm);
-  background-color: light-dark(var(--kui-neutral-200), var(--kui-neutral-700));
+  border-radius: calc(var(--Ouirounded) * 1rem);
+  padding: var(--Ouispacing-xs) var(--Ouispacing-sm);
+  background-color: light-dark(var(--Ouineutral-200), var(--Ouineutral-700));
 }
 
 /*=====            End of Select       ======*/

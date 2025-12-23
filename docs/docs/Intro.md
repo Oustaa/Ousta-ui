@@ -3,11 +3,11 @@ sidebar_position: 1
 title: Introduction
 ---
 
-# @Kousta-ui
-**@kousta-ui** is a ui library ....
+# ousta-ui
+**ousta-ui** is a ui library ....
 
 ## Pakcages
-the following are the packages that @Kousta-ui provides
+the following are the packages that ousta-ui provides
 
 ### Table
 

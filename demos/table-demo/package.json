@@ -10,11 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@kousta-ui/components": "workspace:*",
-    "@kousta-ui/helpers": "workspace:*",
-    "@kousta-ui/hooks": "workspace:*",
-    "@kousta-ui/styles": "workspace:*",
-    "@kousta-ui/table": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

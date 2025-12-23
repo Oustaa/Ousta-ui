@@ -4,7 +4,7 @@ const obj = {
   _id: 234,
   first_name: "Oussama",
   last_name: "Tailba",
-  name: "Kousta ui",
+  name: "usta ui",
   versions: {
     number: 123,
     name: "@latest",
@@ -21,7 +21,7 @@ describe("nestedObjectPros tests", () => {
     it("should return the correct value (Level 1)", () => {
       const value = getNestedProperty(obj, "name");
 
-      expect(value).toBe("Kousta ui");
+      expect(value).toBe("usta ui");
     });
 
     it("should concat _ and - ", () => {
@@ -39,7 +39,7 @@ describe("nestedObjectPros tests", () => {
     it("should concat _ and -  3", () => {
       const value = getNestedProperty(obj, "name _id");
 
-      expect(value).toBe("Kousta ui 234");
+      expect(value).toBe("usta ui 234");
     });
 
     it("should return the correct value (Level 2)", () => {
@@ -59,17 +59,17 @@ describe("nestedObjectPros tests", () => {
     });
     it("should return the value with skiping special characters", () => {
       const specialSkipping = getNestedProperty(obj, "(name) (versions.name)");
-      expect(specialSkipping).toBe("(Kousta ui) (@latest)");
+      expect(specialSkipping).toBe("(usta ui) (@latest)");
     });
   });
 
   describe("updateNestedProperties tests", () => {
     it("should update a props (Level 1)", () => {
-      const objUbdated = updateNestedProperties(obj, "name", "@kousta-ui");
+      const objUbdated = updateNestedProperties(obj, "name", "ousta-ui");
 
       const objName = getNestedProperty(objUbdated, "name");
 
-      expect(objName).toBe("@kousta-ui");
+      expect(objName).toBe("ousta-ui");
     });
 
     it("should update a props (Level 2)", () => {
@@ -81,11 +81,11 @@ describe("nestedObjectPros tests", () => {
     });
 
     it("should not update the original object", () => {
-      updateNestedProperties(obj, "name", "@kousta-ui");
+      updateNestedProperties(obj, "name", "ousta-ui");
 
       const objName = getNestedProperty(obj, "name");
 
-      expect(objName).toBe("Kousta ui");
+      expect(objName).toBe("usta ui");
     });
   });
 });

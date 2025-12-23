@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef, PropsWithChildren, ReactNode } from "react";
-import { ButtonProps, MenuProps, ModalProps } from "@kousta-ui/components";
+import { ButtonProps, MenuProps, ModalProps } from "@ousta-ui/components";
 
 export type TableProps<T> = {
   data: T[];
@@ -29,13 +29,13 @@ export type TOptions<T> = Partial<{
     canView?: CanPerformAction<T>;
   } & (
     | {
-        type: "modal";
-        modalOptions?: Partial<ModalProps>;
-      }
+      type: "modal";
+      modalOptions?: Partial<ModalProps>;
+    }
     | {
-        type?: "extends";
-        modalOptions?: never;
-      }
+      type?: "extends";
+      modalOptions?: never;
+    }
   );
   bulkActions: TBulkActions<T>[];
   extraviews: TExtraView[];
@@ -53,15 +53,15 @@ export type THeaderValue<T> = {
   visible?: boolean;
   canSee?: boolean;
 } & (
-  | {
+    | {
       value: string;
       exec?: never;
     }
-  | {
+    | {
       value?: never;
       exec: (row: T) => string | ReactNode;
     }
-);
+  );
 
 export type THeader<T> = Record<string, THeaderValue<T>>;
 

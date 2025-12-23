@@ -42,7 +42,7 @@ const ContextMenuItemWithSubs: FC<
 
   return (
     <div>
-      <div className={classes["kui-iconsContainer"]}></div>
+      <div className={classes["OuiiconsContainer"]}></div>
       <button
         ref={menuSubRef}
         onClick={(e) => {
@@ -52,10 +52,10 @@ const ContextMenuItemWithSubs: FC<
           }
           setSubsOpened(true);
         }}
-        className={classes["kui-contextMenu-Item"]}
+        className={classes["OuicontextMenu-Item"]}
         disabled={!active}
       >
-        <div className={classes["kui-contextMenu-ItemIcon"]}>
+        <div className={classes["OuicontextMenu-ItemIcon"]}>
           {renderIcon(icon)}
         </div>
         <div
@@ -72,7 +72,7 @@ const ContextMenuItemWithSubs: FC<
 
         {subsOpened && (
           <div
-            className={`${classes["kui-contextMenu"]} ${classes["kui-contextMenu-Item_WithSubs"]}`}
+            className={`${classes["OuicontextMenu"]} ${classes["OuicontextMenu-Item_WithSubs"]}`}
             style={{
               left: !offsetX ? "100%" : "unset",
               right: offsetX ? "100%" : "unset",

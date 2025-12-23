@@ -4,14 +4,14 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "@kousta-ui",
+  title: "ousta-ui",
   tagline: "a ui library focuses on performance and convenience",
   favicon: "img/favicon.ico",
-  url: "https://ui.kousta.org",
+  url: "https://ui.ousta.dev",
   baseUrl: "/",
 
-  organizationName: "Kousta",
-  projectName: "@kousta-ui",
+  organizationName: "Ousta",
+  projectName: "ousta-ui",
 
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
@@ -25,7 +25,7 @@ const config: Config = {
         docs: {
           routeBasePath: "docs",
           sidebarPath: "./sidebars.ts",
-          editUrl: "https://github.com/Oustaa/kousta-ui/blob/main/docs/",
+          editUrl: "https://github.com/Oustaa/usta-ui/blob/main/docs/",
         },
         theme: { customCss: "./src/css/custom.css" },
       } satisfies Preset.Options,
@@ -36,8 +36,8 @@ const config: Config = {
     liveCodeBlock: { playgroundPosition: "bottom" },
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "@kousta-ui",
-      logo: { alt: "@kousta-ui logo", src: "img/logo.svg" },
+      title: "ousta-ui",
+      logo: { alt: "ousta-ui logo", src: "img/logo.svg" },
       items: [
         {
           type: "docSidebar",
@@ -46,7 +46,7 @@ const config: Config = {
           label: "Docs",
         },
         {
-          href: "https://github.com/oustaa/kousta-ui",
+          href: "https://github.com/oustaa/usta-ui",
           label: "GitHub",
           position: "right",
         },
@@ -77,11 +77,11 @@ const config: Config = {
         {
           title: "More",
           items: [
-            { label: "GitHub", href: "https://github.com/Oustaa/kousta-ui" },
+            { label: "GitHub", href: "https://github.com/Oustaa/usta-ui" },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} @kousta-ui, Kousta.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ousta-ui, Ousta.`,
     },
     prism: {
       theme: prismThemes.okaidia,

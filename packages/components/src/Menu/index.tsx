@@ -144,7 +144,7 @@ const MenuContainer: FC<PropsWithChildren<MenuProps>> = ({
 
           setOpened(false);
         }}
-        className={classes["kui-menu"]}
+        className={classes["Ouimenu"]}
       >
         {children}
       </div>
@@ -162,7 +162,7 @@ const MenuTarget: FC<PropsWithChildren> = ({ children }) => {
 
         toggle();
       }}
-      className={classes["kui-menu_target"]}
+      className={classes["Ouimenu_target"]}
     >
       {children}
     </button>
@@ -177,7 +177,7 @@ const MenuDropDown: FC<PropsWithChildren> = ({ children }) => {
     <div
       role="menu"
       style={getPositionStyle(offset!)[position!] as CSSProperties}
-      className={classes["kui-menu_dropdown"]}
+      className={classes["Ouimenu_dropdown"]}
     >
       {children}
     </div>
@@ -209,7 +209,7 @@ const MenuItem: FC<PropsWithChildren<MenuItemProps>> = ({
       onClick={() => {
         if (shouldClose) close();
       }}
-      className={classes["kui-menu_item"]}
+      className={classes["Ouimenu_item"]}
     >
       {leftSection && leftSection}
       {children}
@@ -222,7 +222,7 @@ const MenuLabel: FC<
   PropsWithChildren<{ leftSection?: ReactNode; rightSection?: ReactNode }>
 > = ({ children, leftSection, rightSection }) => {
   return (
-    <span className={classes["kui-menu_label"]}>
+    <span className={classes["Ouimenu_label"]}>
       {leftSection && leftSection}
       {children}
       {rightSection && rightSection}
@@ -231,7 +231,7 @@ const MenuLabel: FC<
 };
 
 const MenuDivider = () => {
-  return <hr className={classes["kui-menu_divider"]} />;
+  return <hr className={classes["Ouimenu_divider"]} />;
 };
 
 export default {

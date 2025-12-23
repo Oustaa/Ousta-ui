@@ -4,7 +4,6 @@ import commonjs from "@rollup/plugin-commonjs";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
 import { readdirSync } from "fs";
-import path from "path";
 
 const packagesDir = "packages";
 const packages = readdirSync(packagesDir).filter(

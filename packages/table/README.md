@@ -1,6 +1,6 @@
-# @kousta-ui/table
+# ousta-ui/table
 
 ## instalation
 ```code
-  npm i @kousta-ui/table
+  npm i ousta-ui/table
 ```

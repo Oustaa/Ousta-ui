@@ -21,7 +21,7 @@ const config: StorybookConfig = {
       plugins: [tsconfigPaths()],
       resolve: {
         alias: {
-          "@kousta-ui/styles": path.resolve(
+          "ousta-ui/styles": path.resolve(
             __dirname,
             "../packages/styles/src",
           ),

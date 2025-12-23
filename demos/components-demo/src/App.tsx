@@ -10,7 +10,7 @@ import {
   Select,
   WindowBoundary,
   AsyncSelect,
-} from "@kousta-ui/components";
+} from "@ousta-ui/components";
 import {
   Bs123,
   BsAlphabet,
@@ -20,14 +20,14 @@ import {
 } from "react-icons/bs";
 import { RiFileExcel2Line } from "react-icons/ri";
 
-import "@kousta-ui/components/esm/index.css";
+import "@ousta-ui/components/esm/index.css";
 import "./App.css";
 import "./index.css";
-import { useDisclosure, useScrollLock } from "@kousta-ui/hooks";
+import { useDisclosure, useScrollLock } from "@ousta-ui/hooks";
 
-import { isNodeAChild } from "@kousta-ui/helpers";
+import { isNodeAChild } from "@ousta-ui/helpers";
 // import { getUsers } from "./app";
-import { useDebounceCallback } from "@kousta-ui/hooks";
+import { useDebounceCallback } from "@ousta-ui/hooks";
 
 type User = { first_name: string; last_name: string; id: number };
 type ProductInterface = { ref: string; id: number; designation: string };

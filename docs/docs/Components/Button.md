@@ -14,7 +14,7 @@ Now supports **global default props & per‑variant overrides via a context prov
 ## Quick start
 
 ```tsx
-import { Button } from "@kousta-ui/components";
+import { Button } from "@ousta-ui/components";
 
 export default function Example() {
   return (
@@ -74,7 +74,7 @@ With the [`ComponentPropsProvider`](/docs/Components/ComponentPropsProvider) you
 
 #### Example
 ```tsx
-import { Button, ComponentPropsProvider } from "@kousta-ui/components";
+import { Button, ComponentPropsProvider } from "@ousta-ui/components";
 
 <ComponentPropsProvider
   button={{
@@ -113,7 +113,7 @@ import { Button, ComponentPropsProvider } from "@kousta-ui/components";
 Use the provider to set a default size for a subtree. Component props always **override** provider defaults.
 
 ```tsx
-import { Button, ComponentPropsProvider } from "@kousta-ui/components";
+import { Button, ComponentPropsProvider } from "@ousta-ui/components";
 
 <>
   <Button>Medium (default)</Button>
@@ -165,7 +165,7 @@ import { Button, ComponentPropsProvider } from "@kousta-ui/components";
 Use `ComponentPropsProvider` to define **app‑wide defaults** for Button and to create **custom variants** that map to native button props (style/className/aria/etc.).
 
 ```tsx
-import { ComponentPropsProvider, Button } from "@kousta-ui/components";
+import { ComponentPropsProvider, Button } from "@ousta-ui/components";
 
 export default function App() {
   return (
@@ -233,7 +233,7 @@ Default class names from `Button.module.css`:
 - Light: `.btn-primary-light`, `.btn-success-light`, `.btn-danger-light`, `.btn-neutral-light`, `.btn-warning-light`
 - Link: `.btn-primary-link`, `.btn-success-link`, `.btn-danger-link`, `.btn-neutral-link`, `.btn-warning-link`
 
-Each variant leverages design tokens (e.g., `--kui-primary-500`) and defines hover states per style.
+Each variant leverages design tokens (e.g., `--Ouiprimary-500`) and defines hover states per style.
 
 ---
 

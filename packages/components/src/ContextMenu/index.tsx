@@ -75,7 +75,7 @@ const ContextmenuProvider: FC<ContextmenuProviderProps> = ({
     // @ts-expect-error this is not an error
     <As {...extraProps} onContextMenu={handleContextMenu}>
       {children}
-      <div className="kui-contextMenu-Container">
+      <div className="OuicontextMenu-Container">
         {menuVisible && options.length > 0 && (
           <ContextMenuMenu
             ref={menuRef}

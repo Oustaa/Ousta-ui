@@ -1,7 +1,7 @@
-import { Button, Modal } from "@kousta-ui/components";
-import { useDisclosure } from "@kousta-ui/hooks";
+import { Button, Modal } from "@ousta-ui/components";
+import { useDisclosure } from "@ousta-ui/hooks";
 
-import "@kousta-ui/components/esm/index.css";
+import "ousta-ui/components/esm/index.css";
 
 export const UncontrolledModal = () => {
   return (

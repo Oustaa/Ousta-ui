@@ -3,7 +3,7 @@ import FormElement from "../../FormElement";
 import Input from "../../Input";
 import Label from "../../Label";
 import { SelectDataConstraints, SelectProps } from "./_props";
-import { getNestedProperty, isNodeAChild } from "@kousta-ui/helpers";
+import { getNestedProperty, isNodeAChild } from "@ousta-ui/helpers";
 
 import classes from "./Select.module.css";
 import SelectDropDown from "./components/SelectDropDown";

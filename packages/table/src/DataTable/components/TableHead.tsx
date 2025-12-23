@@ -1,5 +1,5 @@
 import { useTableContext } from "../tableContext";
-import { Button, Menu } from "@kousta-ui/components";
+import { Button, Menu } from "@ousta-ui/components";
 
 import classes from "../DataTable.module.css";
 
@@ -19,7 +19,7 @@ const TableHead = () => {
   );
 
   return (
-    <div className={classes["kui-table-head"]}>
+    <div className={classes["Ouitable-head"]}>
       {Object.keys(rowSelection.selectedRows).length ? (
         options?.bulkActions?.map((action) => {
           if (action.canPerformAction) return null;
@@ -38,7 +38,7 @@ const TableHead = () => {
           );
         })
       ) : config?.noHead !== true ? (
-        <div className={classes["kui-table-head-section"]}>
+        <div className={classes["Ouitable-head-section"]}>
           {/* Hide Table Rows */}
           {config?.toggleRows !== false && (
             <Menu.Menu closeOnClick={false}>
@@ -52,7 +52,7 @@ const TableHead = () => {
               <Menu.DropDown>
                 {headersCanSee.map((headerName) => (
                   <Menu.Item key={headerName}>
-                    <div className={classes["kui-table-head_sh_label"]}>
+                    <div className={classes["Ouitable-head_sh_label"]}>
                       <input
                         id={headerName}
                         type="checkbox"

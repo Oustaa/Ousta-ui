@@ -6,20 +6,20 @@ button {
   padding: 0;
 }
 
-.kui-contextMenu-Container {
+.OuicontextMenu-Container {
   /* z-index: 9999; */
 }
 
-.kui-contextMenu {
+.OuicontextMenu {
   position: absolute;
-  background-color: light-dark(var(--kui-neutral-50), var(--kui-neutral-700));
+  background-color: light-dark(var(--Ouineutral-50), var(--Ouineutral-700));
   width: max-content;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
   z-index: 1000;
-  border-radius: calc(var(--kui-rounded) * 1rem);
+  border-radius: calc(var(--Ouirounded) * 1rem);
 }
 
-.kui-contextMenu-Item {
+.OuicontextMenu-Item {
   position: relative;
   border: unset;
   width: 100%;
@@ -29,8 +29,8 @@ button {
   gap: 10px;
   padding-inline-end: 10px;
 
-  background: light-dark(var(--kui-neutral-50), var(--kui-neutral-700));
-  color: light-dark(var(--kui-neutral-900), var(--kui-neutral-50));
+  background: light-dark(var(--Ouineutral-50), var(--Ouineutral-700));
+  color: light-dark(var(--Ouineutral-900), var(--Ouineutral-50));
   font-size: 0.9rem;
   font-weight: 400;
 
@@ -39,57 +39,51 @@ button {
   }
 
   &:disabled {
-    background-color: light-dark(
-      var(--kui-neutral-100),
-      var(--kui-neutral-800)
-    );
-    color: light-dark(var(--kui-neutral-300), var(--kui-neutral-600));
+    background-color: light-dark(var(--Ouineutral-100), var(--Ouineutral-800));
+    color: light-dark(var(--Ouineutral-300), var(--Ouineutral-600));
     cursor: not-allowed;
   }
 
   &:not(:disabled):hover {
-    background-color: light-dark(
-      var(--kui-neutral-100),
-      var(--kui-neutral-600)
-    );
+    background-color: light-dark(var(--Ouineutral-100), var(--Ouineutral-600));
   }
 }
 
-.kui-contextMenu-ItemIcon {
+.OuicontextMenu-ItemIcon {
   min-width: 35px;
   aspect-ratio: 1/1;
   /* height: 30px; */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: light-dark(var(--kui-neutral-200), var(--kui-neutral-800));
+  background-color: light-dark(var(--Ouineutral-200), var(--Ouineutral-800));
 }
 
-.kui-contextMenu_separator_container {
+.OuicontextMenu_separator_container {
   position: relative;
   display: flex;
 }
 
-.kui-contextMenu_separator {
+.OuicontextMenu_separator {
   height: 0.5px;
   margin-block: 8px;
   width: 100%;
   margin-inline: 10px;
   margin-block: 0px;
-  background-color: var(--kui-neutral-200);
+  background-color: var(--Ouineutral-200);
 }
 
-.kui-contextMenu_separator_icon {
+.OuicontextMenu_separator_icon {
   min-width: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: light-dark(var(--kui-neutral-200), var(--kui-neutral-800));
+  background-color: light-dark(var(--Ouineutral-200), var(--Ouineutral-800));
 }
 
-.kui-contextMenu_group_title {
-  font-size: var(--kui-spacing-sm);
-  color: var(--kui-neutral-500);
+.OuicontextMenu_group_title {
+  font-size: var(--Ouispacing-sm);
+  color: var(--Ouineutral-500);
   padding-inline: 10px;
   padding-top: 4px;
 }

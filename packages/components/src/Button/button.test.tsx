@@ -4,7 +4,7 @@ import { ComponentPropsProvider } from "../PropsContext";
 
 describe("Button test", () => {
   it("should render props", () => {
-    const content = "Kousta ui";
+    const content = "usta ui";
     render(<Button>{content}</Button>);
     const buttonElement = screen.getByRole("button", { name: content });
 
@@ -14,8 +14,8 @@ describe("Button test", () => {
   it("should invoke the onClick function", () => {
     const onClickCallBack = jest.fn();
 
-    render(<Button onClick={onClickCallBack}>Kousta ui</Button>);
-    const buttonElement = screen.getByRole("button", { name: /Kousta ui/i });
+    render(<Button onClick={onClickCallBack}>usta ui</Button>);
+    const buttonElement = screen.getByRole("button", { name: /usta ui/i });
 
     fireEvent.click(buttonElement);
 
@@ -27,10 +27,10 @@ describe("Button test", () => {
 
     render(
       <Button onClick={onClickCallBack} disabled>
-        Kousta ui
+        usta ui
       </Button>,
     );
-    const buttonElement = screen.getByRole("button", { name: /Kousta ui/i });
+    const buttonElement = screen.getByRole("button", { name: /usta ui/i });
 
     fireEvent.click(buttonElement);
 
@@ -39,9 +39,9 @@ describe("Button test", () => {
 
   it("renders and handles click", () => {
     const onClick = jest.fn();
-    render(<Button onClick={onClick}>Kousta ui</Button>);
+    render(<Button onClick={onClick}>usta ui</Button>);
 
-    fireEvent.click(screen.getByRole("button", { name: /Kousta ui/i }));
+    fireEvent.click(screen.getByRole("button", { name: /usta ui/i }));
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
@@ -49,11 +49,11 @@ describe("Button test", () => {
     const onClick = jest.fn();
     render(
       <Button disabled onClick={onClick}>
-        Kousta ui
+        usta ui
       </Button>,
     );
 
-    fireEvent.click(screen.getByRole("button", { name: /Kousta ui/i }));
+    fireEvent.click(screen.getByRole("button", { name: /usta ui/i }));
     expect(onClick).not.toHaveBeenCalled();
   });
 

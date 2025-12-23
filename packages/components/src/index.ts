@@ -1,4 +1,4 @@
-import "@kousta-ui/styles/tokens.css";
+import "@ousta-ui/styles/tokens.css";
 
 export { default as ContextMenu } from "./ContextMenu";
 export type * from "./ContextMenu/_props";

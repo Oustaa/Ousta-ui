@@ -7,48 +7,45 @@ button {
   background: unset;
 }
 
-.kui-menu {
+.Ouimenu {
   position: relative;
   width: max-content;
   text-align: left;
 }
 
-.kui-menu_target {
+.Ouimenu_target {
   border: unset;
-  background-color: light-dark(
-    --var(--kui-neutral-600),
-    var(--kui-neutral-200)
-  );
+  background-color: light-dark(--var(--Ouineutral-600), var(--Ouineutral-200));
 
   &:hover {
     cursor: pointer;
   }
 }
 
-.kui-menu_dropdown {
+.Ouimenu_dropdown {
   width: max-content;
   position: absolute;
-  background: light-dark(var(--kui-neutral-50), var(--kui-neutral-700));
-  color: light-dark(var(--kui-neutral-900), var(--kui-neutral-50));
-  padding: var(--kui-spacing-sm);
+  background: light-dark(var(--Ouineutral-50), var(--Ouineutral-700));
+  color: light-dark(var(--Ouineutral-900), var(--Ouineutral-50));
+  padding: var(--Ouispacing-sm);
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 4px;
-  box-shadow: 2px 2px 6px light-dark(var(--kui-neutral-100), transparent);
-  border: 1px solid light-dark(var(--kui-neutral-200), var(--kui-neutral-700));
+  box-shadow: 2px 2px 6px light-dark(var(--Ouineutral-100), transparent);
+  border: 1px solid light-dark(var(--Ouineutral-200), var(--Ouineutral-700));
   z-index: 1000;
-  border-radius: calc(var(--kui-rounded) * 1rem);
+  border-radius: calc(var(--Ouirounded) * 1rem);
 }
 
-.kui-menu_item {
+.Ouimenu_item {
   font-size: 0.9rem;
   font-weight: 400;
   display: flex;
   gap: 6px;
 
   &:not(:first-child) {
-    margin-top: var(--kui-spacing-sm);
+    margin-top: var(--Ouispacing-sm);
   }
 
   &:hover {
@@ -56,15 +53,15 @@ button {
   }
 }
 
-.kui-menu_label {
+.Ouimenu_label {
   font-size: 0.75rem;
 }
 
-.kui-menu_divider {
+.Ouimenu_divider {
   height: 1px;
   width: 100%;
-  margin-block: var(--kui-spacing-sm);
-  background-color: light-dark(var(--kui-neutral-800), var(--kui-neutral-200));
+  margin-block: var(--Ouispacing-sm);
+  background-color: light-dark(var(--Ouineutral-800), var(--Ouineutral-200));
   border: unset;
 }
 

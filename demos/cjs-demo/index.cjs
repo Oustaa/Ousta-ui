@@ -1,8 +1,8 @@
-const { getNestedProperty } = require("@kousta-ui/helpers");
+const { getNestedProperty } = require("ousta-ui/helpers");
 
 const obj = {
   _id: 123,
-  name: "Kousta ui",
+  name: "usta ui",
   version: {
     number: 123,
     name: "@latest",

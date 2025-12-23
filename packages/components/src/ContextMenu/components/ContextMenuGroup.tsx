@@ -7,9 +7,9 @@ const ContextmenuGroup: FC<{ title: string }> = ({ title }) => {
   return (
     <>
       <Separator />
-      <div className={classes["kui-contextMenu_separator_container"]}>
-        <div className={classes["kui-contextMenu_separator_icon"]}></div>
-        <span className={classes["kui-contextMenu_group_title"]}>{title}</span>
+      <div className={classes["OuicontextMenu_separator_container"]}>
+        <div className={classes["OuicontextMenu_separator_icon"]}></div>
+        <span className={classes["OuicontextMenu_group_title"]}>{title}</span>
       </div>
     </>
   );

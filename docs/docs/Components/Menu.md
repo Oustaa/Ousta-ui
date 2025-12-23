@@ -23,7 +23,7 @@ The **Menu** component renders a lightweight, accessible dropdown that can be op
 ## Quick start
 
 ```tsx
-import { Menu } from "@kousta-ui/components";
+import { Menu } from "@ousta-ui/components";
 
 export default function Example() {
   return (
@@ -57,7 +57,7 @@ The Menu is a composition of small primitives:
 - **`Menu.Divider`** – a horizontal separator
 
 ```tsx
-import { Menu } from "@kousta-ui/components";
+import { Menu } from "@ousta-ui/components";
 
 <Menu.Menu>
   <Menu.Target>Actions</Menu.Target>
@@ -132,7 +132,7 @@ export type MenuItemProps = {
 
 ### Click (default)
 ```tsx
-import { Menu } from "@kousta-ui/components";
+import { Menu } from "@ousta-ui/components";
 
 <Menu.Menu>
   <Menu.Target>Open</Menu.Target>
@@ -145,7 +145,7 @@ import { Menu } from "@kousta-ui/components";
 
 ### Hover
 ```tsx
-import { Menu } from "@kousta-ui/components";
+import { Menu } from "@ousta-ui/components";
 
 <Menu.Menu type="hover">
   <Menu.Target>Hover me</Menu.Target>
@@ -165,7 +165,7 @@ import { Menu } from "@kousta-ui/components";
 Global default via `closeOnClick` on the container, with per-item override using `closeMenuOnClick`:
 
 ```tsx
-import { Menu } from "@kousta-ui/components";
+import { Menu } from "@ousta-ui/components";
 
 // Global: do NOT close when any item is clicked
 <Menu.Menu closeOnClick={false}>
@@ -207,7 +207,7 @@ The dropdown can be placed on any side and alignment relative to the trigger. Us
 Change the spacing from the trigger with `offset`:
 
 ```tsx
-import { Menu } from "@kousta-ui/components";
+import { Menu } from "@ousta-ui/components";
 
 <Menu.Menu position="Right-Center" offset={12}>
   <Menu.Target>More</Menu.Target>
@@ -220,7 +220,7 @@ import { Menu } from "@kousta-ui/components";
 ## With icons, labels & dividers
 
 ```tsx
-import { Menu } from "@kousta-ui/components";
+import { Menu } from "@ousta-ui/components";
 import { LuUser, LuSettings, LuLogOut } from "react-icons/lu";
 
 <Menu.Menu>
@@ -246,7 +246,7 @@ import { LuUser, LuSettings, LuLogOut } from "react-icons/lu";
 ## Disabled items
 
 ```tsx
-import { Menu } from "@kousta-ui/components";
+import { Menu } from "@ousta-ui/components";
 
 <Menu.Menu>
   <Menu.Target>Move</Menu.Target>
@@ -279,7 +279,7 @@ This component ships with basic ARIA roles already applied:
 
 ```tsx
 import React, { useState } from "react";
-import { Menu } from "@kousta-ui/components";
+import { Menu } from "@ousta-ui/components";
 
 // Example: extra ARIA on the trigger
 export default function A11yMenu() {
@@ -306,12 +306,12 @@ export default function A11yMenu() {
 
 The default styles are provided via `Menu.module.css` with the following class hooks:
 
-- `.kui-menu` – container (positioning context)
-- `.kui-menu_target` – trigger button
-- `.kui-menu_dropdown` – dropdown panel
-- `.kui-menu_item` – item row
-- `.kui-menu_label` – label text
-- `.kui-menu_divider` – `<hr />` separator
+- `.Ouimenu` – container (positioning context)
+- `.Ouimenu_target` – trigger button
+- `.Ouimenu_dropdown` – dropdown panel
+- `.Ouimenu_item` – item row
+- `.Ouimenu_label` – label text
+- `.Ouimenu_divider` – `<hr />` separator
 
 You can override these classes or wrap the primitives to attach your design system tokens.
 
@@ -324,7 +324,7 @@ The library already uses semantic roles, which makes testing straightforward:
 ```tsx
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { Menu } from "@kousta-ui/components";
+import { Menu } from "@ousta-ui/components";
 
 test("opens on click and applies correct position", async () => {
   render(
@@ -347,7 +347,7 @@ For hover mode:
 ```tsx
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { Menu } from "@kousta-ui/components";
+import { Menu } from "@ousta-ui/components";
 
 render(
   <Menu.Menu type="hover" position="Left-End">
@@ -368,7 +368,7 @@ expect(screen.getByRole("menu")).toBeVisible();
 
 - Use `closeOnClick={false}` for batch actions; override with `closeMenuOnClick` on the specific item that should close.
 - Combine `Right-Start` / `Left-Start` for toolbar menus, and `Bottom-Start` for action menus attached to list rows.
-- The menu uses the **nearest positioned ancestor** (`.kui-menu`) for absolute positioning—don’t remove `position: relative` there.
+- The menu uses the **nearest positioned ancestor** (`.Ouimenu`) for absolute positioning—don’t remove `position: relative` there.
 - Prefer concise labels; multi-line content is supported but consider `leftSection`/`rightSection` for icons/shortcuts instead.
 
 ---

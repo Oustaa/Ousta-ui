@@ -5,7 +5,7 @@ import {
   ContextMenu,
   ContextMenuTypeOption,
   Modal,
-} from "@kousta-ui/components";
+} from "@ousta-ui/components";
 
 import {
   canPerformActionResolver,
@@ -18,7 +18,7 @@ import Table from "../../Table";
 
 import classes from "../DataTable.module.css";
 import { ReactNode, useState } from "react";
-import { useDisclosure } from "@kousta-ui/hooks";
+import { useDisclosure } from "@ousta-ui/hooks";
 import { getShownHeders } from "../utils/getShownHeaders";
 import TableRowCheckbox from "./TableRowSelect";
 
@@ -189,7 +189,7 @@ const TableRow = <T extends Record<string, unknown>>({
             {...config?.props?.td}
             style={{
               backgroundColor: highlighted
-                ? "light-dark(var(--kui-neutral-100), var(--kui-neutral-800))"
+                ? "light-dark(var(--Ouineutral-100), var(--Ouineutral-800))"
                 : "unset",
               ...config?.props?.td?.style,
             }}

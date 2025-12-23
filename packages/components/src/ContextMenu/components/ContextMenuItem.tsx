@@ -50,10 +50,10 @@ const ContextMenuItem: FC<
           onClose?.();
         }
       }}
-      className={classes["kui-contextMenu-Item"]}
+      className={classes["OuicontextMenu-Item"]}
       disabled={!active}
     >
-      <div className={classes["kui-contextMenu-ItemIcon"]}>
+      <div className={classes["OuicontextMenu-ItemIcon"]}>
         {renderIcon(icon)}
       </div>
       {title}

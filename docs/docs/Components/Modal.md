@@ -15,7 +15,7 @@ The **Modal** component provides an accessible and flexible dialog interface for
 ## Usage
 
 ```tsx
-import { Modal } from "@kousta-ui/components";
+import { Modal } from "@ousta-ui/components";
 
 <Modal modalTrigger="Open Modal">
   {/* Modal Content */}
@@ -77,7 +77,7 @@ Avoid uncontrolled modals for complex or data-heavy components since they mount 
 A **controlled modal** allows parent components to manage its open/close state manually. This is useful for modals that depend on asynchronous data or need to be programmatically opened/closed.
 
 ```tsx
-import { useDisclosure } from "@kousta-ui/hooks";
+import { useDisclosure } from "@ousta-ui/hooks";
 
 const Example = () => {
   const { close, open, opened } = useDisclosure(false);

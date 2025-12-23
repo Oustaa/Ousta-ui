@@ -11,10 +11,10 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["DOM", "DOM.Iterable", "ES2021"],
     "paths": {
-      "@kousta-ui/styles/*": ["../styles/src/*"],
-      "@kousta-ui/helpers/*": ["../helpers/src/*"],
-      "@kousta-ui/components/*": ["../components/src/*"],
-      "@kousta-ui/hooks/*": ["../hooks/src/*"]
+      "@ousta-ui/styles/*": ["../styles/src/*"],
+      "@ousta-ui/helpers/*": ["../helpers/src/*"],
+      "@ousta-ui/components/*": ["../components/src/*"],
+      "@ousta-ui/hooks/*": ["../hooks/src/*"]
     }
   }
 }

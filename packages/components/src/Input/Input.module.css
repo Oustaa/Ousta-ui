@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--kui-spacing-2xs);
+  gap: var(--Ouispacing-2xs);
 }
 
 .input-inner {
@@ -17,37 +17,37 @@
 }
 
 .input {
-  padding: var(--kui-spacing-xs) var(--kui-spacing-sm);
-  border: solid 0.5px light-dark(var(--kui-neutral-200), var(--kui-neutral-700));
-  background-color: light-dark(var(--kui-neutral-100), var(--kui-neutral-800));
-  font-size: var(--kui-text-base);
+  padding: var(--Ouispacing-xs) var(--Ouispacing-sm);
+  border: solid 0.5px light-dark(var(--Ouineutral-200), var(--Ouineutral-700));
+  background-color: light-dark(var(--Ouineutral-100), var(--Ouineutral-800));
+  font-size: var(--Ouitext-base);
   flex: 1 1 0%;
-  border-radius: calc(var(--kui-rounded) * 1rem);
+  border-radius: calc(var(--Ouirounded) * 1rem);
 
   &::placeholder {
-    color: light-dark(var(--kui-neutrl-200), var(--kui-neutral-700));
+    color: light-dark(var(--Ouineutrl-200), var(--Ouineutral-700));
   }
 
   &:focus,
   &:focus-visible {
     outline: unset;
-    border-color: var(--kui-primary-600);
+    border-color: var(--Ouiprimary-600);
   }
 
   &[data-error="true"] {
-    background-color: var(--kui-danger-100);
-    border: 0.5px solid var(--kui-danger-600);
-    color: var(--kui-danger-600);
+    background-color: var(--Ouidanger-100);
+    border: 0.5px solid var(--Ouidanger-600);
+    color: var(--Ouidanger-600);
 
     &::placeholder {
-      color: var(--kui-danger-400);
+      color: var(--Ouidanger-400);
     }
   }
 }
 
 .error-message {
-  color: var(--kui-danger-500);
-  font-size: var(--kui-text-sm);
+  color: var(--Ouidanger-500);
+  font-size: var(--Ouitext-sm);
 }
 
 /*=====            End of Input        ======*/

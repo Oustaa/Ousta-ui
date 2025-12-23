@@ -1,5 +1,5 @@
 {
-  "name": "@kousta-ui/helpers",
+  "name": "@ousta-ui/helpers",
   "version": "0.1.3",
   "main": "./cjs/index.cjs",
   "module": "./esm/index.mjs",

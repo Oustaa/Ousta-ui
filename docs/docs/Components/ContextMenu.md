@@ -23,7 +23,7 @@ The **ContextMenu** provides a customizable, nested right‑click menu. It suppo
 ## Quick start
 
 ```tsx
-import ContextMenu from "@kousta-ui/components/ContextMenu";
+import ContextMenu from "@ousta-ui/components/ContextMenu";
 import { LuCopy, LuTrash2, LuFolderPlus } from "react-icons/lu";
 
 export default function Example() {
@@ -52,7 +52,7 @@ export default function Example() {
         },
       ]}
     >
-      <div style={{ padding: 24, border: "1px dashed var(--kui-neutral-400)" }}>
+      <div style={{ padding: 24, border: "1px dashed var(--Ouineutral-400)" }}>
         Right‑click anywhere in this box
       </div>
     </ContextMenu>
@@ -266,16 +266,16 @@ Use `As` to change the HTML tag of the right‑click area and pass extra props.
 
 Default class names from `ContextMenu.module.css`:
 
-- `.kui-contextMenu-Container` – absolute stacking context (portal‑like container)
-- `.kui-contextMenu` – the floating menu panel
-- `.kui-contextMenu-Item` – clickable row
-- `.kui-contextMenu-ItemIcon` – leading icon cell
-- `.kui-contextMenu_separator_container` – wrapper for separator line
-- `.kui-contextMenu_separator` – separator line
-- `.kui-contextMenu_separator_icon` – spacer cell aligned with icons
-- `.kui-contextMenu_group_title` – group header text
-- `.kui-contextMenu-Item_WithSubs` – submenu panel modifier
-- `.kui-iconsContainer` – (internal) reserved icon gutter
+- `.OuicontextMenu-Container` – absolute stacking context (portal‑like container)
+- `.OuicontextMenu` – the floating menu panel
+- `.OuicontextMenu-Item` – clickable row
+- `.OuicontextMenu-ItemIcon` – leading icon cell
+- `.OuicontextMenu_separator_container` – wrapper for separator line
+- `.OuicontextMenu_separator` – separator line
+- `.OuicontextMenu_separator_icon` – spacer cell aligned with icons
+- `.OuicontextMenu_group_title` – group header text
+- `.OuicontextMenu-Item_WithSubs` – submenu panel modifier
+- `.OuiiconsContainer` – (internal) reserved icon gutter
 
 Override any of these to fit your design system.
 
@@ -287,7 +287,7 @@ The test suite can follow these patterns:
 
 ```tsx
 import { render, screen, fireEvent } from "@testing-library/react";
-import ContextMenu from "@kousta-ui/components/ContextMenu";
+import ContextMenu from "@ousta-ui/components/ContextMenu";
 
 const onLeaf = jest.fn();
 const onSub = jest.fn();
